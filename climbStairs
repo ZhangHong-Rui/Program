@@ -7,7 +7,13 @@
         return s[-1]
 
      
-    def climbStairs(self, n: int) -> int:
-        if n == 0 or n == 1:
+# remember recursion
+memo = [-1] * (n - 1)
+def climbStairs(self, n: int) -> int:
+    def dfs(i: int, memo) -> int:
+        if i == 0 or i == 1:
             return 1
-        return self.climbStairs(n - 1) + self.climbStairs(n - 2)
+        if memo[i] == -1:
+            memo[i] = dfs(i - 1, memo) + dfs(i - 2, memo)
+        return memo[i]
+    return dfs(n, memo)
