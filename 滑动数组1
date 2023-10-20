@@ -1,0 +1,22 @@
+class Solution(object):
+    def minSubArrayLen(self, target, nums):
+        """
+        :type target: int
+        :type nums: List[int]
+        :rtype: int
+        """
+        res = len(nums)
+        sum1 = 0
+        left = 0
+        right = 0
+
+        for right in range(len(nums)):
+            sum1 += nums[right]
+            while sum1 >= target:
+                res = min(res,right-left+1)
+                sum1 -= nums[left]
+                left += 1 
+        if (res == len(nums)) and (sum(nums) < target):
+            return 0
+            
+        return res
