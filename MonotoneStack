@@ -1,5 +1,9 @@
 Stack st
 
-For(All array items){
-  while(!st.empty ||)
+For(All array items     point is i){
+  while(!st.empty and array[st.top()] < array[i])
+     st.pop()
+
+
+  st.push(i)
 }
