@@ -1,0 +1,5 @@
+Stack st
+
+For(All array items){
+  while(!st.empty ||)
+}
